@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    input {
+        width: 100%;
+    }
+    
+    .success {
+        color: green;
+        display: none;
+        text-align: center;
+    }
+    
+    .error {
+        color: red;
+        display: none;
+    }
+    </style>
+    <script type="text/javascript">
+    function subForm() {
+
+        var firstName = document.getElementById('first_name').value;
+        var lastName = document.getElementById('last_name').value;
+        var passWord = document.getElementById('pass').value.length;
+
+        //var status = false; 
+        if (firstName == "") {
+            document.getElementById('fName-error').style.display = 'block';
+            document.getElementById("sucessMessage").style.display = 'none';
+        } else {
+            document.getElementById('fName-error').style.display = 'none';
+        }
+        if (lastName == "") {
+            document.getElementById('lName-error').style.display = 'block';
+            document.getElementById("sucessMessage").style.display = 'none';
+
+        } else {
+            document.getElementById('lName-error').style.display = 'none';
+        }
+        if (passWord <= 8) {
+            document.getElementById('pass-error').style.display = 'block';
+            document.getElementById('sucessMessage').style.display = 'none';
+
+        } else {
+            document.getElementById('pass-error').style.display = 'none';
+        }
+        if (firstName != '' && lastName != '' && passWord >= 8) {
+            document.getElementById("sucessMessage").style.display = 'block';
+            document.getElementById("signUpForm").reset();
+        }
+        return false;
+    }
+
+    function resetForm() {
+        document.getElementById("signUpForm").reset();
+        document.getElementById('fName-error').style.display = 'none';
+        document.getElementById('lName-error').style.display = 'none';
+        document.getElementById('pass-error').style.display = 'none';
+    }
+    </script>
+</head>
+
+<body>
+    <form id="signUpForm">
+        <div id="sucessMessage" class="success">Form submitted successfully</div>
+        <table align="center" width=50% cellspacing="2" cellpadding="2">
+            <tr>
+                <td align="right" valign="top">First Name</td>
+                <td>
+                    <input type="text" value="" id="first_name" name="first_name">
+                </td>
+                <td> <span id="fName-error" class="error">Please enter your first name</span></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">Last Number</td>
+                <td>
+                    <input type="text" value="" id="last_name" name="last_name">
+                </td>
+                <td><span id="lName-error" class="error">Please enter your last name</span></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top">password</td>
+                <td>
+                    <input type="password" value="" id="pass" name="pass">
+                </td>
+                <td><span id="pass-error" class="error">Password must be greater than 8</span></td>
+            </tr>
+            <tr>
+                <td align="right" valign="top"></td>
+                <td>
+                    <button type="button" onclick="subForm()">Submit</button>
+                    <button type="button" onclick="resetForm()">Cancel</button>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
