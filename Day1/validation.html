@@ -25,40 +25,45 @@
         var firstName = document.getElementById('first_name').value;
         var lastName = document.getElementById('last_name').value;
         var passWord = document.getElementById('pass').value.length;
+        var fNameError = document.getElementById('fName-error');
+        var lNameError = document.getElementById('lName-error');
+        var passError = document.getElementById('pass-error');
+        var succMessage = document.getElementById('sucessMessage');
+        var signupForm = document.getElementById("signUpForm");
 
         //var status = false; 
         if (firstName == "") {
-            document.getElementById('fName-error').style.display = 'block';
-            document.getElementById("sucessMessage").style.display = 'none';
+            fNameError.style.display = 'block';
+            succMessage.style.display = 'none';
         } else {
-            document.getElementById('fName-error').style.display = 'none';
+            fNameError.style.display = 'none';
         }
         if (lastName == "") {
-            document.getElementById('lName-error').style.display = 'block';
-            document.getElementById("sucessMessage").style.display = 'none';
+            lNameError.style.display = 'block';
+            succMessage.style.display = 'none';
 
         } else {
-            document.getElementById('lName-error').style.display = 'none';
+            lNameError.style.display = 'none';
         }
         if (passWord <= 8) {
-            document.getElementById('pass-error').style.display = 'block';
-            document.getElementById('sucessMessage').style.display = 'none';
+            passError.style.display = 'block';
+            succMessage.style.display = 'none';
 
         } else {
-            document.getElementById('pass-error').style.display = 'none';
+            passError.style.display = 'none';
         }
         if (firstName != '' && lastName != '' && passWord >= 8) {
-            document.getElementById("sucessMessage").style.display = 'block';
-            document.getElementById("signUpForm").reset();
+            succMessage.style.display = 'block';
+            signupForm.reset();
         }
         return false;
     }
 
     function resetForm() {
-        document.getElementById("signUpForm").reset();
-        document.getElementById('fName-error').style.display = 'none';
-        document.getElementById('lName-error').style.display = 'none';
-        document.getElementById('pass-error').style.display = 'none';
+        signupForm.reset();
+        fNameError.style.display = 'none';
+        lNameError.style.display = 'none';
+        passError.style.display = 'none';
     }
     </script>
 </head>
@@ -68,11 +73,11 @@
         <div id="sucessMessage" class="success">Form submitted successfully</div>
         <table align="center" width=50% cellspacing="2" cellpadding="2">
             <tr>
-                <td align="right" valign="top">First Name</td>
-                <td>
+                <td align="right" valign="top" width="20%">First Name</td>
+                <td width="50%">
                     <input type="text" value="" id="first_name" name="first_name">
                 </td>
-                <td> <span id="fName-error" class="error">Please enter your first name</span></td>
+                <td width="30%"> <span id="fName-error" class="error">Please enter your first name</span></td>
             </tr>
             <tr>
                 <td align="right" valign="top">Last Number</td>
