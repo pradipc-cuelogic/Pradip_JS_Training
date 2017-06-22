@@ -7,25 +7,45 @@
 
     </style>
     <script type="text/javascript">
-        function myPyramid() {
-            var i;
-            var j;
-            var num = prompt();
+    function myPyramid() {
+        // var i;
+        // var j;
+        // var num = prompt();
 
-            for (i = 1; i <= num; i++) {
-                for (j = 1; j <= i; j++) {
-                    document.write('*');
-                }
-                document.write('<br/>');
+        // for (i = 1; i <= num; i++) {
+        //     for (j = 1; j <= i; j++) {
+        //         document.write('*');
+        //     }
+        //     document.write('<br/>');
+        // }
+        // for (i = num - 1; i >= 1; i--) {
+        //     for (j = 1; j <= i; j++) {
+        //         document.write('*');
+        //     }
+        //     document.write('<br/>');
+        // }
+
+
+        var inputVal = prompt("enter no.: ");
+        var n = inputVal;
+        var temp = 0;
+        for (i = 1; i < (n * 2); i++) {
+            if (i > n) {
+                temp = i;
+                //console.log(temp);
             }
-            for (i = num - 1; i >= 1; i--) {
-                for (j = 1; j <= i; j++) {
-                    document.write('*');
+            for (j = 1; j <= i; j++) {
+                if (i < n) {
+                    document.write("* ");
+                } else if (temp <= ((n * 2) - 1)) {
+                    document.write("* ");
+                    temp++;
                 }
-                document.write('<br/>');
-            }
+            }            
+            document.write("<br>");
         }
-        myPyramid();
+    }
+    myPyramid();
     </script>
 </head>
 
