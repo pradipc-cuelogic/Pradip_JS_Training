@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    * {
+        box-sizing: border-box;
+    }
+    
+    .calc-wrapper {
+        width: 200px;
+        border-collapse: separate;
+        border-spacing: 5px;
+    }
+    
+    #inputValue {
+        border: 1px solid #ccc;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+        text-align: right
+    }
+    
+    input[type="button"] {
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <table class="calc-wrapper" bordersp>
+        <tr>
+            <td colspan="3">
+                <div id="inputValue">0</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="numb" id="one" type="button" value="1">
+            </td>
+            <td>
+                <input class="numb" id="two" type="button" value="2">
+            </td>
+            <td>
+                <input class="numb" id="three" type="button" value="3">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="numb" id="four" type="button" value="4">
+            </td>
+            <td>
+                <input class="numb" id="five" type="button" value="5">
+            </td>
+            <td>
+                <input class="numb" id="six" type="button" value="6">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="numb" id="seven" type="button" value="7">
+            </td>
+            <td>
+                <input class="numb" id="eight" type="button" value="8">
+            </td>
+            <td>
+                <input class="numb" id="nine" type="button" value="9">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input class="numb" id="zero" type="button" value="0">
+            </td>
+            <td>
+                <input class="numb" id="dot" type="button" value=".">
+            </td>
+            <td>
+                <input id="dvd" type="button" value="/">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="sub" type="button" value="-">
+            </td>
+            <td>
+                <input id="add" type="button" value="+">
+            </td>
+            <td>
+                <input id="mul" type="button" value="*">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input id="cancel" type="button" value="C">
+            </td>
+            <td>
+                <input id="rem" type="button" value="%">
+            </td>
+            <td>
+                <input id="equal" type="button" value="=">
+            </td>
+        </tr>
+    </table>
+    <script src="calc.js"></script>
+</body>
+
+</html>
